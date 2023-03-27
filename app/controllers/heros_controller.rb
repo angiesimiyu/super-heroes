@@ -10,7 +10,7 @@ class HerosController < ApplicationController
     def show
         hero = Hero.find(params[:id])
         if hero
-            render json: hero, serializer: HerosWithPowersSerializer, status: :ok
+            render json: hero, status: :ok
         else
             render json: {error:"Hero not found"}, status: :not_found
         end
